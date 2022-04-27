@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_navigation"
+    app:startDestination="@id/fragment_one">
+    <fragment
+        android:id="@+id/fragment_one"
+        android:name="com.example.navigationtest.fragment_one"
+        android:label="fragment_one"
+        tools:layout="@layout/fragment_one" >
+        <action
+            android:id="@+id/action_fragment_one_to_deviceRankFragment"
+            app:destination="@id/deviceRankFragment" />
+        <action
+            android:id="@+id/action_fragment_one_to_fragment_snake"
+            app:destination="@id/fragment_snake">
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/deviceRankFragment"
+        android:name="com.example.navigationtest.rankings.DeviceRankFragment"
+        android:label="deviceRankFragment"
+        tools:layout="@layout/device_ranking_fragment">
+
+        <action
+            android:id="@+id/action_deviceRankFragment_to_fragment_one"
+            app:destination="@id/fragment_one" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_snake"
+        android:name="com.example.navigationtest.Snake.Fragment_snake_game"
+        android:label="game"
+        tools:layout="@layout/fragment_snake" >
+        <action
+            android:id="@+id/action_fragment_snake_to_fragment_one"
+            app:destination="@id/fragment_one" />
+        <argument
+            android:name="player_name"
+            app:argType="string"
+            />
+        <action
+            android:id="@+id/action_fragment_snake_self"
+            app:destination="@id/fragment_snake" />
+    </fragment>
+</navigation>

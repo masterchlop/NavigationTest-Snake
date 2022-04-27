@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03A9F4"
+    tools:context=".Snake.Fragment_snake_game">
+
+    <TableLayout
+        android:id="@+id/frameLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/scoreTextView"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+
+                android:text="Score: 0"
+                android:textColor="#F44336"
+                android:textSize="28sp" />
+
+            <com.example.navigationtest.Snake.AppleCompass
+                android:id="@+id/appleCompass"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </TableRow>
+    </TableLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/background"
+        android:stretchColumns="0,1,2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="9:15"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="0"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="1"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="2"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="3"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="4"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="5"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="6"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="7"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field811"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="8"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="9"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field10"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="10"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field11"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="11"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field12"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="12"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field13"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="13"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field14"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="14"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field15"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="15"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field16"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="16"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field1611"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="17"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field17"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="18"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field18"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="19"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field19"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="20"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field20"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="21"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field21"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="22"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field22"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="23"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field23"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="24"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field24"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="25"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field2411"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="26"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field25"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="27"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field26"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="28"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field27"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="29"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field28"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="30"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field29"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="31"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field30"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="32"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field31"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="33"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field32"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="34"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field3211"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="35"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field33"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="36"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field34"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="37"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field35"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="38"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field36"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="39"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field37"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="40"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field38"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="41"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field39"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="42"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field40"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="43"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field4011"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="44"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field41"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="45"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field42"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="46"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field43"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="47"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field44"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="48"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field45"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="49"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field46"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="50"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field47"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="51"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field48"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="52"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field4811"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="53"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field49"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="54"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field50"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="55"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field51"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="56"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field52"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="57"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field53"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="58"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field54"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="59"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field55"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="60"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field56"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="61"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field5611"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="62"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field57"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="63"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field58"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="64"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field59"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="65"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field60"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="66"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field61"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="67"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field62"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="68"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field63"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="69"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field64"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="70"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field6411"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="71"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field65"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="72"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field66"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="73"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field67"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="74"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field68"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="75"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field69"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="76"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field70"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="77"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field71"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="78"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field72"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="79"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field7211"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="80"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field73"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="81"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field74"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="82"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field75"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="83"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field76"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="84"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field77"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="85"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field78"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="86"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field79"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="87"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field80"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="88"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field8011"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="89"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field81"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="90"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field82"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="91"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field83"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="92"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field84"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="93"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field85"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="94"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field86"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="95"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field87"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="96"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field88"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="97"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field8811"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="98"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field89"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="99"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field90"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="100"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field91"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="101"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field92"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="102"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field93"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="103"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field94"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="104"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field95"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="105"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field96"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="106"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field9611"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="107"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field97"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="108"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field98"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="109"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field99"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="110"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field100"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="111"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field101"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="112"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field102"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="113"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field103"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="114"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field104"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="115"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field10411"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="116"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field105"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="117"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field106"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="118"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field107"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="119"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field108"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="120"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field109"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="121"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field110"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="122"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field111"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="123"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field112"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="124"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field11211"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="125"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/field113"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="126"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field114"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="127"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field115"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="128"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field116"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="129"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field117"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="130"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field118"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="131"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field119"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="132"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field120"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="133"
+                app:srcCompat="@drawable/empty" />
+
+            <ImageView
+                android:id="@+id/field12011"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:contentDescription="@string/field_of_a_game"
+                android:tag="134"
+                app:srcCompat="@drawable/empty" />
+
+        </TableRow>
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
