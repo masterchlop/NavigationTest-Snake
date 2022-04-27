@@ -51,7 +51,7 @@ class RecyclerAdapter(var data: List<LeaderBoards>, private val entryDao: Leader
 
         }
         holder.itemView.setBackgroundColor(Color.parseColor(backgroundColor))
-        holder.itemView.rank.text = pos.id.toString()
+        holder.itemView.rank.text = place.toString()
         holder.itemView.score.text = pos.result.toString()
         holder.itemView.findViewById<TextView>(R.id.name).text=pos.name
 

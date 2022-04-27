@@ -38,6 +38,7 @@ data class SnakeModel(val snakeIndex: Int) {
 
     fun getSnakeCoordinatesNoHead(): MutableList<Pair<Int, Int>> {
         val tmp = mutableListOf<Pair<Int, Int>>()
+
         for (i in 1 until snakePositions.size)
         {
             tmp.add(snakePositions[i])

@@ -32,6 +32,7 @@ import kotlin.math.abs
 import kotlin.random.Random
 
 class Fragment_snake_game : Fragment() {
+
     val args :Fragment_snake_gameArgs by navArgs()
     private lateinit var binding: FragmentSnakeBinding
     private var PlayerName=""
@@ -40,6 +41,7 @@ class Fragment_snake_game : Fragment() {
     private var screenHeight = 15
     private var playerPosX = -1
     private var playerPosY = -1
+    private lateinit var scoreText: TextView
     private lateinit var compass: AppleCompass
     private lateinit var database:AppDatabase
 
@@ -48,7 +50,7 @@ class Fragment_snake_game : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
 
         binding = FragmentSnakeBinding.inflate(inflater,container,false)
@@ -69,7 +71,7 @@ class Fragment_snake_game : Fragment() {
             }
 
         }
-
+        instance = this
         snakes = mutableListOf()
         for (i in 0 .. enemySnakeCount) {
             snakes.add(SnakeModel(i))
@@ -78,9 +80,6 @@ class Fragment_snake_game : Fragment() {
         scoreText = binding.scoreTextView
         playerPosX = snakes[0].head().first
         playerPosY = snakes[0].head().second
-
-
-
         mapLegend[0.toByte()] = R.drawable.empty
         mapLegend[1.toByte()] = R.drawable.map_field
 
@@ -164,13 +163,6 @@ class Fragment_snake_game : Fragment() {
         }
     }
 
-
-
-
-
-
-
-
     private fun whichSnakeOnField(X: Int, Y: Int): Int {
         for (i in 0 .. enemySnakeCount) {
             if (snakes[i].isAlive() && Pair(X, Y) in snakes[i].getSnakeCoordinates())
@@ -218,10 +210,11 @@ class Fragment_snake_game : Fragment() {
 
 
     private fun chooseMoveDirection(snake: SnakeModel) {
-        // alternatywny algorytm, ktoryt wlacza sie gdy waz zaczyna sie krecic w kolko, bo jablko jest za przeszkoda
-        // istnieje pewne prawdopodobientswo, ze waz przejdzie za przeszkode korzystajac z tego prymitywnego ulepszenia,
-        // a nawet jesli mu sie nie uda, to przynajmniej bedzie wygladal mniej glupio
-        // jesli alternatywny algorytm wpadl by w przeszkode, to przez jedna iteracje skorzystamy z normalnego, ale nie zmniejszymy licznika
+
+        /*
+        alternative algorithm - it starts when the snake starts going round in circles because an apple is behind a trap, it doesn't work
+         always but makes the snake looks less foolish
+         */
         if (snake.getAltAlgorithm() != 0)
         {
             val tmp = coordinatesAfterMove(snake, snake.getAltDirection())
@@ -253,7 +246,7 @@ class Fragment_snake_game : Fragment() {
             }
         }
 
-        //podstawowy algorytm, gdy alternatywny nie zostal zastosowany
+        //basic algorithm
         val possibleDirections = when(val currentDirection = snake.getDirection()) {
             0 -> mutableListOf(3, 0, 1)
             3 -> mutableListOf(2, 3, 0)
@@ -372,7 +365,8 @@ class Fragment_snake_game : Fragment() {
     }
 
     companion object {
-        lateinit var scoreText: TextView
+//        private lateinit var instance: ActivityInvitationFragment
+        private lateinit var instance : Fragment_snake_game
 
         const val MAP_WIDTH = 30
         const val MAP_HEIGHT = 25
@@ -424,7 +418,7 @@ class Fragment_snake_game : Fragment() {
 
         fun addPlayersPoint() {
             playerPoints++
-            scoreText.text = "Score: $playerPoints"
+            instance.binding.scoreTextView.text = "Score: $playerPoints"
         }
 
         fun getScore(): Int {
